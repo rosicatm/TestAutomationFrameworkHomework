@@ -60,6 +60,7 @@ public class BoardsPage extends BaseTrelloPage {
     }
 
     public void assertBoardIsDeleted() {
+        actions.waitForElementNotPresent("trello.boardsPage.boardByTeamAndName", 10, "trello.boardPage.findBoard");
 
     }
 }

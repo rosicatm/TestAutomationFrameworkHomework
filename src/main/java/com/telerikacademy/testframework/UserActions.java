@@ -145,4 +145,15 @@ public class UserActions {
         Actions actions = new Actions(driver);
         actions.moveToElement(element).perform();
     }
+    public void waitForElementNotPresent(String locator, int seconds, Object... locatorArguments) {
+        Duration timeout = Duration.ofSeconds(seconds);
+        WebDriverWait wait = new WebDriverWait(driver, timeout);
+        String xpath = getLocatorValueByKey(locator, locatorArguments);
+
+        try {
+            wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(xpath)));
+        } catch (Exception exception) {
+            Assert.fail("Element with locator: '" + xpath + "' is still present.");
+        }
+    }
 }
