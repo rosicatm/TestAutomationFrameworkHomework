@@ -32,8 +32,6 @@ public class BoardPage extends BaseTrelloPage {
         actions.waitForElementPresent("trello.boardPage.cardByName");
         //Drag the  and drop the location - to "Doing" and then "Done"
         actions.selectOptionsFromDragAndDrop("trello.boardPage.sourceLocator", "trello.boardPage.targetLocator");
-        actions.selectOptionsFromDragAndDrop("trello.boardPage.targetLocator", "trello.boardPage.targetLocator2");
-
     }
 
 
@@ -46,11 +44,11 @@ public class BoardPage extends BaseTrelloPage {
     }
 
     public void assertCardExists() {
-        actions.waitForElementPresent("//a[@data-testid='trello-card']");
+        actions.waitForElementPresent("trello.boardPage.cardByName");
     }
 
-    public void assertCardIsMoved() {
-        actions.waitForElementPresent("//a[@data-testid='trello-card']");
+    public void assertCardIsMoved(String listName, String cardName) {
+        actions.waitForElementPresent("trello.boardPage.cardByName", listName, cardName);
     }
 
 }

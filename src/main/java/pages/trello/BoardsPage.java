@@ -11,7 +11,6 @@ public class BoardsPage extends BaseTrelloPage {
     }
 
     public void createBoard() {
-
         String boardName = getUIMappingByKey("trello.boardName");
 
         actions.waitForElementClickable("trello.header.create.menuButton");
@@ -25,7 +24,6 @@ public class BoardsPage extends BaseTrelloPage {
 
         actions.waitForElementClickable("trello.create.board.submitButton");
         actions.clickElement("trello.create.board.submitButton");
-
     }
 
     public void clickOnBoard(String boardName) {
@@ -34,7 +32,6 @@ public class BoardsPage extends BaseTrelloPage {
     }
 
     public void deleteBoard() {
-
         actions.waitForElementClickable("trello.boardPage.findBoard");
         actions.clickElement("trello.boardPage.findBoard");
 

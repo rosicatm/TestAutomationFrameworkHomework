@@ -31,7 +31,6 @@ public class BoardTest extends BaseTest {
         BoardsPage boardsPage = new BoardsPage(actions.getDriver());
         boardsPage.clickOnBoard("My First Board");
 
-
         BoardPage boardPage = new BoardPage(actions.getDriver());
         boardPage.addCardToList("My new Card");
         boardPage.assertCardExists();
@@ -43,7 +42,7 @@ public class BoardTest extends BaseTest {
 
         BoardPage boardPage = new BoardPage(actions.getDriver());
         boardPage.moveCardToList("My new Card", "Doing");
-        boardPage.assertCardIsMoved();
+        boardPage.assertCardIsMoved("Doing", "My new Card");
     }
 
     @Test
