@@ -34,7 +34,6 @@ public class BoardPage extends BaseTrelloPage {
         actions.selectOptionsFromDragAndDrop("trello.boardPage.sourceLocator", "trello.boardPage.targetLocator");
     }
 
-
     public void assertListExists(String listName) {
         actions.waitForElementPresent("trello.boardPage.listByName", listName);
     }
@@ -50,5 +49,4 @@ public class BoardPage extends BaseTrelloPage {
     public void assertCardIsMoved(String listName, String cardName) {
         actions.waitForElementPresent("trello.boardPage.cardByName", listName, cardName);
     }
-
 }

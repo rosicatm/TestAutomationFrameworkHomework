@@ -12,7 +12,6 @@ public class BoardTest extends BaseTest {
 
     @Test
     public void createBoardWhenCreateBoardClicked() {
-
         login();
 
         BoardsPage boardsPage = new BoardsPage(actions.getDriver());
@@ -21,7 +20,6 @@ public class BoardTest extends BaseTest {
         BoardPage boardPage = new BoardPage(actions.getDriver());
         boardPage.assertAddListExists();
         boardPage.assertListExists("To Do");
-
     }
 
     @Test
@@ -51,6 +49,5 @@ public class BoardTest extends BaseTest {
         BoardsPage boardsPage = new BoardsPage(actions.getDriver());
         boardsPage.deleteBoard();
         boardsPage.assertBoardIsDeleted();
-
     }
 }
