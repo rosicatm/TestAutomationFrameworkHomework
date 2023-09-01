@@ -9,36 +9,31 @@ public class BoardPage extends BaseTrelloPage {
     }
 
     public void addCardToList(String cardName) {
-        //Find the existing board
+
         actions.waitForElementClickable("trello.boardPage.findBoard");
         actions.clickElement("trello.boardPage.findBoard");
 
-
-        // Find the "Add Card" button in the list and click it
         actions.waitForElementClickable("trello.boardPage.addCardButton");
         actions.clickElement("trello.boardPage.addCardButton");
 
-        // Input the card name
         actions.waitForElementPresent("trello.boardPage.cardName");
         actions.typeValueInField(cardName, "trello.boardPage.cardName");
 
-        // Click the "Submit" button to create the card
         actions.clickElement("trello.boardPage.submitNewCard");
 
-        // Assert the presence of the new card
         actions.waitForElementPresent("trello.boardPage.cardByName");
     }
 
     public void moveCardToList(String cardName, String listName) {
 
-        //Find the existing board
         actions.waitForElementClickable("trello.boardPage.findBoard");
         actions.clickElement("trello.boardPage.findBoard");
 
-        // Wait for the presence of the new card
         actions.waitForElementPresent("trello.boardPage.cardByName");
-        //Drag the source and drop the location
+        //Drag the  and drop the location - to "Doing" and then "Done"
         actions.selectOptionsFromDragAndDrop("trello.boardPage.sourceLocator", "trello.boardPage.targetLocator");
+        actions.selectOptionsFromDragAndDrop("trello.boardPage.targetLocator", "trello.boardPage.targetLocator2");
+
     }
 
 

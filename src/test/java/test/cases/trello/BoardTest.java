@@ -1,8 +1,12 @@
 package test.cases.trello;
 
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 import pages.trello.BoardPage;
 import pages.trello.BoardsPage;
+
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
 public class BoardTest extends BaseTest {
 
@@ -34,13 +38,12 @@ public class BoardTest extends BaseTest {
     }
 
     @Test
-    public void moveCardBetweenStatesWhenDragAndDropIsUsed() {
+    public void createdCardMovedBetweenStatesWhenDragAndDropIsUsed() {
         login();
 
         BoardPage boardPage = new BoardPage(actions.getDriver());
         boardPage.moveCardToList("My new Card", "Doing");
         boardPage.assertCardIsMoved();
-
     }
 
     @Test

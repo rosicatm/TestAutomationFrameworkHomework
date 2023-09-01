@@ -35,27 +35,21 @@ public class BoardsPage extends BaseTrelloPage {
 
     public void deleteBoard() {
 
-        //Find and click on the existing board
         actions.waitForElementClickable("trello.boardPage.findBoard");
         actions.clickElement("trello.boardPage.findBoard");
 
-        // Hover over the Board container
         actions.hoverOverElement("trello.boardsPage.boardContainer");
 
         actions.waitForElementClickable("trello.boardsPage.boardMenuOptions");
 
         actions.clickElement("trello.boardsPage.boardMenuOptions");
-        //Click Close Board
         actions.waitForElementPresent("trello.boardsPage.closeBoardButton");
         actions.clickElement("trello.boardsPage.closeBoardButton");
 
-        //Confirm Close
         actions.waitForElementPresent("trello.boardsPage.closeBoardButtonConfirm");
         actions.clickElement("trello.boardsPage.closeBoardButtonConfirm");
-        //Wait for the Delete form to appear
         actions.waitForElementPresent("trello.boardsPage.closeBoardMessage");
 
-//Click Permanently Delete
         actions.clickElement("trello.boardsPage.PermanentlyDeleteButton");
     }
 
